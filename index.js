@@ -7,6 +7,8 @@ function breakOut(array, changeValue, stopValue) {
   }
   return array;
 }
+
+// a better way, check for positive 
 function breakOut(array, changeValue, stopValue) {
   for (let i = 0, l = array.length; i < l; i++) {
     if (array[i] === stopValue) {
@@ -28,6 +30,16 @@ function keepGoing(array, changeValue, skipValue) {
   return array;
 }
 
+function keepGoing(array, changeValue, skipValue) {
+  for (let i = 0, l = array.length; i < l; i++) {
+    if (array[i] === skipValue) {
+      continue
+    }
+    array[i] = changeValue
+  }
+  return array
+}
+
 function findBy(array, findFn) {
   for (let i=0;i<array.length;i++) {
     if (findFn(array[i])) {
@@ -41,17 +53,7 @@ function findBy(array, findFn) {
 
 
 
-function keepGoing(array, changeValue, skipValue) {
-  for (let i = 0, l = array.length; i < l; i++) {
-    if (array[i] === skipValue) {
-      continue
-    }
 
-    array[i] = changeValue
-  }
-
-  return array
-}
 
 function findBy(array, findFn) {
   for (let i = 0, l = array.length; i < l; i++) {
@@ -59,6 +61,5 @@ function findBy(array, findFn) {
       return array[i]
     }
   }
-
   return null
 }
